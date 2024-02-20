@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Екскурсії</title>
+</head>
+<style>
+    body{
+        background: #FAEBD7;
+    }
+    table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: #d3cb73;
+            color: white;
+        }
+        a {
+            color: rgb(205, 203, 126);
+        }
+</style>
+<body>
+    <h1><font color="green">Наші екскурсії</font></h1>
+    <font size="4" face="Arial, sans-serif">
+        <p><i>Дізнайтеся більше про наші захоплюючі екскурсії.</i> <b>Ми пропонуємо різноманітні маршрути та цікаві місця для відвідування.</b></p>
+        <p><a href="contacts.html" style="color: green;">Зв'язатися з нами</a></p>
+         <!-- Таблиця екскурсій -->
+    <table id="excursions-ukraine" cellspacing="10">
+        <caption>Екскурсії Україною</caption>
+        <tr>
+            <th><img src="lviv.jpg" alt="Екскурсія 1" width="250" height="180"></th>
+            <th><img src="karpaty.jpg" alt="Екскурсія 2" width="250" height="180"></th>
+            <th><img src="odesa.jpg" alt="Екскурсія 3" width="250" height="180"></th>
+        </tr>
+        <tr>
+            <td><a href="contacts.html" style="color: rgb(8, 75, 164);">Забронювати</a></td>
+            <td><a href="contacts.html" style="color: rgb(8, 75, 164);">Забронювати</a></td>
+            <td><a href="contacts.html" style="color: rgb(8, 75, 164);">Забронювати</a></td>
+        </tr>
+        <tr>
+            <td>Популярний тур по Львову на автобусі з відвіданням відомих місць Львова, розміщених за межами історичного центру міста.</td>
+            <td>Дводенний тур-елегія в Карпати, під час якого Ви переосмислите філософію життя, ознайомившись з нашим трагічним минулим у Рогатині, відпочивши різнобічно в Яремче й на Буковелі та здійснивши непросте сходження на найвищу вершину України  - гору Говерлу.</td>
+            <td>Познайомитися з Одесою ближче, насолодитися її архітектурою, посмакувати її кухнею, поговорити з одеситами про те, про це, пожартувати, посумувати, зануритися в море або, якщо немає погоди, в атмосферу життєдайного південного міста і закохатися в нього раз і назавжди</td>
+        </tr>
+    </table>
+    <table id="excursions-table" cellspacing="10">
+        <caption>Екскурсії закордоном</caption>
+        <colgroup>
+            <col span="1" style="background-color:#DEB887; color:white; text-align:center;">
+            <col span="1" style="background-color:#DEB887; color:white; text-align:center;">
+            <col span="2" style="background-color:#DEB887; color:white; text-align:center;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th rowspan="2" class="top-align center-align">Дата</th>
+                <th rowspan="2" class="top-align center-align">Країна</th>
+                <th colspan="2" class="center-align">Деталі</th>
+            </tr>
+            <tr>
+                <th class="center-align">Маршрут</th>
+                <th class="center-align">Вартість</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="center-align">01.05.2024</td>
+                <td class="center-align">Італія</td>
+                <td class="center-align">Рим - Флоренція - Венеція</td>
+                <td class="center-align">1200$</td>
+            </tr>
+            <tr>
+                <td class="center-align">15.06.2024</td>
+                <td class="center-align">Франція</td>
+                <td class="center-align">Париж - Ліон - Ніцца</td>
+                <td class="center-align">1500$</td>
+            </tr>
+            <tr>
+                <td class="center-align">20.07.2024</td>
+                <td class="center-align">Іспанія</td>
+                <td class="center-align">Мадрид - Барселона - Севілья</td>
+                <td class="center-align">1400$</td>
+            </tr>
+        </tbody>
+    </table>
+    </font>
+</body>
+</html>
