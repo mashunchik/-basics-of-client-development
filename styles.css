@@ -1,0 +1,113 @@
+/* Заголовок */
+.HN {
+    font-size: 24px;
+    color: #1d0d0c;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Тіло */
+BODY {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+    background-color: #f4f4f4; /* Фоновий колір */
+}
+
+/* Посилання */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Стиль для рівня документу */
+a:hover {
+    text-decoration: underline;
+}
+
+
+html {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Внутрішній стиль для абзацу */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+/* Стилі для списків */
+.list {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+
+ul {
+    list-style-type: disc; /* Встановлено маркери для маркованого списку */
+}
+
+ol {
+    list-style-type: decimal; /* Встановлено нумерацію для нумерованого списку */
+}
+
+/* Стилі для визначень */
+
+dt {
+    font-weight: bold; /* Задано жирний шрифт для термінів */
+}
+
+dd {
+    padding-left: 40px !important; /* Встановлено відступ для опису визначень */
+}
+
+/* Стилі для таблиці */
+#excursions-table {
+    width: 100%; /* Розтягнуто таблицю на всю ширину контейнера */
+    border-collapse: collapse; /* Злиття границь таблиці */
+}
+
+#excursions-table caption {
+    font-weight: bold; /* Задано жирний шрифт для заголовка таблиці */
+    font-size: 20px; /* Задано розмір шрифту для заголовка таблиці */
+}
+
+#excursions-table th, #excursions-table td {
+    padding: 10px; /* Встановлено внутрішній відступ для комірок */
+    border: 1px solid #ddd; /* Додано рамку для комірок */
+}
+
+#excursions-table th {
+    background-color: #DEB887; /* Встановлено фоновий колір для заголовків стовпців */
+    color: white; /* Задано колір тексту для заголовків стовпців */
+    text-align: center; /* Вирівняно текст по центру у заголовках стовпців */
+}
+
+#video1 {
+    margin-bottom: 20px; /* Відступ знизу для відокремлення від наступного контенту */
+    display: flex; /* Використовуємо Flexbox для вирівнювання по центру */
+    justify-content: center; /* Горизонтальне вирівнювання по центру */
+    align-items: center; /* Вертикальне вирівнювання по центру */
+}
+
+/* Контекстний селектор для елементів <a> всередині <p> */
+p a {
+    color: blue;
+}
+
+/* Сусідній селектор для заголовків H1 та H2 */
+H1 + H2 {
+    margin-top: 20px;
+}
+
+/* Дочірній селектор для стилізації <li> всередині елементів з класом list */
+.list > li {
+    font-weight: bold;
+}
