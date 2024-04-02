@@ -1,3 +1,9 @@
+
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 /* Заголовок */
 .HN {
     font-size: 24px;
@@ -8,45 +14,28 @@
 }
 
 /* Тіло */
-BODY {
+body {
     font-size: 16px;
     color: #666;
     line-height: 1.6;
-    text-align: justify;
+    text-align: center;
     background-color: #f4f4f4; /* Фоновий колір */
 }
 
 /* Посилання */
-a {
-    color: #007bff;
-    text-decoration: none;
-}
 
-/* Стиль для рівня документу */
 a:hover {
     text-decoration: underline;
 }
 
 
-html {
-    font-family: 'Times New Roman', Times, serif;
-}
-
-/* Внутрішній стиль для абзацу */
-p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    font-weight: bold;
-    text-align: center;
-}
-
-
-
 /* Стилі для списків */
 .list {
+    list-style-position: inside;
     margin-bottom: 20px;
     padding-left: 20px;
+    color: #000000;
+   
 }
 
 
@@ -56,6 +45,7 @@ ul {
 
 ol {
     list-style-type: decimal; /* Встановлено нумерацію для нумерованого списку */
+    
 }
 
 /* Стилі для визначень */
@@ -99,15 +89,19 @@ dd {
 
 /* Контекстний селектор для елементів <a> всередині <p> */
 p a {
-    color: blue;
+    color: rgb(62, 11, 202);
 }
 
 /* Сусідній селектор для заголовків H1 та H2 */
-H1 + H2 {
-    margin-top: 20px;
+i + b {
+    text-align: center;
+    font-size: 30px;
+    color: blueviolet;
+    font-size: large;
 }
 
 /* Дочірній селектор для стилізації <li> всередині елементів з класом list */
-.list > li {
+ul > li {
     font-weight: bold;
+    color: blueviolet;
 }
