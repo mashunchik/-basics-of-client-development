@@ -1,107 +1,240 @@
-
-
-* {
-    font-family: 'Times New Roman', Times, serif;
-}
-
-/* Заголовок */
-.HN {
-    font-size: 24px;
-    color: #1d0d0c;
-    font-style: italic;
-    line-height: 1.5;
-    text-align: center;
-}
-
-/* Тіло */
 body {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #2e2941;
+}
+
+/* Стилізація шапки */
+header {
+    width: 80%; /* Встановлюємо ширину блока header */
+    margin: 0 auto; /* Розміщуємо блок по центру */
+    background-color: #333;
+    color: #fff;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+nav {
+    position: fixed;
+
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+header .logo {
+    font-size: 24px;
+    color: #1d1342;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li:first-child {
+    margin-left: 0;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    background-image: url('mountain.jpg');
+    background-size: 100% auto;
+    background-size: cover;
+    background-position: center;
     text-align: center;
-    background-color: #f4f4f4; /* Фоновий колір */
+    padding: 100px 0;
+    color: #fff;
+    height: 100vh; /* Займати 100% висоти вікна браузера */
+    margin-top: 0; /* Видалити верхній відступ */
 }
 
-/* Посилання */
-
-a:hover {
-    text-decoration: underline;
+.hero h1 {
+    font-size: 20px; /* Збільшити розмір тексту */
+    color: #1d1342; /* Змінити колір тексту */
+    
+}
+.description {
+    text-align: center; /* Вирівнюємо текст по центру */
+    padding: 20px 100px;
+    color: #fff;
+    max-width: 100%; /* Обмежуємо ширину тексту в межах блоку header */
+    margin-top: 400px;
 }
 
+.description p {
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+}
+.main-content {
+    padding: 50px 0;
+}
 
-/* Стилі для списків */
-.list {
-    list-style-position: inside;
+.tour {
+    border: 1px solid #ccc;
+    padding: 10px;
     margin-bottom: 20px;
-    padding-left: 20px;
-    color: #000000;
-   
-}
-
-
-ul {
-    list-style-type: disc; /* Встановлено маркери для маркованого списку */
-}
-
-ol {
-    list-style-type: decimal; /* Встановлено нумерацію для нумерованого списку */
     
 }
 
-/* Стилі для визначень */
-
-dt {
-    font-weight: bold; /* Задано жирний шрифт для термінів */
+/* Стилізація рядкового елементу <span> всередині туру */
+.tour {
+    text-align: left;
 }
 
-dd {
-    padding-left: 40px !important; /* Встановлено відступ для опису визначень */
+.tour h3 span {
+    display: inline-block;
 }
 
-/* Стилі для таблиці */
-#excursions-table {
-    width: 100%; /* Розтягнуто таблицю на всю ширину контейнера */
-    border-collapse: collapse; /* Злиття границь таблиці */
+.tour img {
+    width: 30%;
+    height: auto;
 }
 
-#excursions-table caption {
-    font-weight: bold; /* Задано жирний шрифт для заголовка таблиці */
-    font-size: 20px; /* Задано розмір шрифту для заголовка таблиці */
+.float-container {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
 }
 
-#excursions-table th, #excursions-table td {
-    padding: 10px; /* Встановлено внутрішній відступ для комірок */
-    border: 1px solid #ddd; /* Додано рамку для комірок */
+
+#about, #contact {
+    width: 50%; /* встановлюємо ширину блоків на 50% */
+    box-sizing: border-box; /* враховуємо внутрішні відступи та границі у розрахунку ширини */
+    padding: 20px; /* встановлюємо внутрішні відступи */
+    text-align: center; /* вирівнюємо текст по центру */
 }
 
-#excursions-table th {
-    background-color: #DEB887; /* Встановлено фоновий колір для заголовків стовпців */
-    color: white; /* Задано колір тексту для заголовків стовпців */
-    text-align: center; /* Вирівняно текст по центру у заголовках стовпців */
+.container {
+    width: 100%; /* робимо контейнер блоків 100% ширини */
+    overflow: hidden; /* фіксуємо висоту контейнера */
+}
+.tour p {
+    margin-top: 10px; /* Відступ зверху */
 }
 
-#video1 {
-    margin-bottom: 20px; /* Відступ знизу для відокремлення від наступного контенту */
-    display: flex; /* Використовуємо Flexbox для вирівнювання по центру */
-    justify-content: center; /* Горизонтальне вирівнювання по центру */
-    align-items: center; /* Вертикальне вирівнювання по центру */
-}
-
-/* Контекстний селектор для елементів <a> всередині <p> */
-p a {
-    color: rgb(62, 11, 202);
-}
-
-/* Сусідній селектор для заголовків H1 та H2 */
-i + b {
+footer {
+    background-color: #f9f9f9;
+    color: #fff;
     text-align: center;
-    font-size: 30px;
-    color: blueviolet;
-    font-size: large;
+    padding: 20px 0;
 }
 
-/* Дочірній селектор для стилізації <li> всередині елементів з класом list */
-ul > li {
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s; /* Плавна анімація при зміні кольору */
+}
+
+header nav ul li a:hover {
+    color: #ff9900; /* Змінюємо колір при наведенні курсора */
+}
+
+/* Додамо стилі для посилань на розділи */
+section {
+    padding: 50px 0;
+    
+}
+
+/* Стилі для розділу "Про нас" */
+#about {
+
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+#about h2 {
+    text-align: center;
+}
+
+#about p {
+    text-align: center;
+}
+
+/* Стилі для розділу "Контакти" */
+#contact {
+
+    background-color: #f9f9f9;
+    position: static;
+}
+
+
+
+#contact h2 {
+    text-align: center;
+}
+
+#contact p {
+    text-align: center;
+}
+
+.logo a {
+    text-decoration: none; /* Відключення підкреслення */
+    color: rgb(0, 0, 0); /* Колір тексту */
+    font-weight: bold; /* Жирний шрифт */
+
+    /* Додаткові стилі, які можна застосувати */
+}
+.logo a:active {
+    color: green; /* Колір при натисканні на посилання */
+}
+
+a:link {
+    color: blue; /* Колір для незалікованих посилань */
+}
+
+a:visited {
+    color: purple; /* Колір для відвіданих посилань */
+}
+
+a:hover {
+    color: red; /* Колір при наведенні на посилання */
+}
+
+a:active {
+    color: green; /* Колір при натисканні на посилання */
+}
+
+.container:first-child {
+    background-color: rgb(226, 211, 211); /* Змінюємо колір фону першого контейнера */
+}
+
+/* Стилізація псевдоелементу before для секції "Про нас" */
+#about:before {
+    content: "Про нас: "; /* Додаємо текст перед вмістом секції "Про нас" */
     font-weight: bold;
-    color: blueviolet;
+    color: blue;
+}
+
+/* Стилізація псевдоелементу after для секції "Контакти" */
+#contact:after {
+    content: "Можете зв'язатись з нами в будь-який час "; /* Додаємо текст після вмісту секції "Контакти" */
+    font-weight: bold;
+    color: red;
+}
+
+/* Стилізація псевдоелементу after для футера */
+footer:after {
+    content: "Всі права захищені."; /* Додаємо текст після вмісту футера */
+    font-style: italic;
+    color: green;
 }

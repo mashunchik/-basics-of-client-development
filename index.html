@@ -3,36 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    </style>
-
-    <title>Головна</title>
-    <meta name="author" content="Tylna Mariia">
+    <title>Hidden Kyiv</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 class="HN"> Ласкаво просимо</h1>
-    
-        <p style="font-style: italic; color:blueviolet; font-size: 30px; font-weight: bold; text-align: center;">Вітаємо вас на нашому сайті про екскурсії. <strong>Ми пропонуємо захоплюючі подорожі та незабутні враження!</strong></p>
-        <p><a href="excursions.html">Дізнатися більше про наші екскурсії</a></p>
-        <p><a href="ourphotos.html">Переглянути наші фото</a></p>
-        <p><a href="contacts.html">Зв'язатися з нами</a></p>
-        <p><a href="#video1">Подивіться відео про нас</a></p>
-        <h2 class="HN">Чому обирають нас?</h2> 
-        <p>Над створенням турів працюють досвідчені мандрівники, екскурсоводи, фахівці, які працювали в туристичних комплексах в різних точках світу… Випадкових людей немає. Тільки ті, хто захоплений туризмом і хоче розвивати його тут, в Україні, розповідаючи про її природні та історичні багатства.</p>
-        <ol class="list" >
-            <li>Наші туристи відправляються в продумані тематичні подорожі.</li>
-            <li>З нами працюють закохані в професію гіди та екскурсоводи.</li>
-            <li>Для кожного туриста ми оформлюємо страховку. Неважливо, розраховано поїздку на день чи на тиждень.</li>
-            <li>А для завзятих мандрівників ми розробили програму лояльності: чим частіше подорожуєш, тим більше економиш.</li>
-        </ol>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo"><a href="#home">Екскурсії Україною</a></div>
+                <ul>
+                    <li><a href="#home">Головна</a></li>
+                    <li><a href="#tours1">Екскурсії</a></li>
+                    <li><a href="#about">Про нас</a></li>
+                    <li><a href="#contact">Контакти</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero" id="home">
         
-        <!-- Плаваючий фрейм з відео -->
-        <div id="video1">
-            <iframe width="500" height="300" src="https://www.youtube.com/embed/JA6Bj7Gr3ko" frameborder="0" allowfullscreen></iframe>
+            <h1>Досліджуйте та відкривайте таємниці України</h1>
+            <div class="description">
+                <p>Україна – це дивовижна країна, що славиться своєю чудовою і неповторною природою, надзвичайно великою кількістю пам`яток культури. Подорожуючи по найцікавішим і величним місцям України можна відчути весь унікальний національний колорит.</p>
+            </div>
         </div>
-        <p><a href="excursions.html#excursions-ukraine" style="color: rgb(85, 85, 225);">Дізнатися більше про екскурсії Україною</a></p>
-        <p><a href="excursions.html#excursions-table" style="color: rgb(85, 85, 225);">Дізнатися більше про екскурсії закордоном</a></p>
-
-  
+    </header>
+    <section class="main-content" id="tours1">
+        <div class="container">
+            <h2>Наші екскурсії</h2>
+            <div class="tour">
+                <img src="karpaty.jpg" alt="Екскурсія 1">
+                <h3><span>Екскурсія Карпатами</span></h3>
+                <p>Дводенний тур-елегія в Карпати, під час якого Ви переосмислите філософію життя, ознайомившись з нашим трагічним минулим у Рогатині, відпочивши різнобічно в Яремче й на Буковелі та здійснивши непросте сходження на найвищу вершину України  - гору Говерлу</p>
+            </div>
+            <div class="tour">
+                <img src="lviv.jpg" alt="Екскурсія 2">
+                <h3><span>Екскурсія у Львів</span></h3>
+                <p>Популярний тур по Львову на автобусі з відвіданням відомих місць Львова, розміщених за межами історичного центру міста.</p>
+            </div>
+            <!-- Додайте інші екскурсії тут -->
+        </div>
+        
+    </section>
+    <div id="about" class="float-container">
+        <div class="container">
+            <h2>Про нас</h2>
+            <p>Щороку послугами нашої туристичної компанії користується велика кількість туристів з усіх регіонів України. Ми завжди маємо мету, щоб Ваш відпочинок був якісний, безпечний, незабутній і найкращий. Наша головна мета, щоб задоволений турист завжди на до нас повертався, а ми гарантуємо Вам нові приємні враження від нових пропозицій.</p>
+        </div>
+    </div>
+    <div id="contact" class="float-container">
+        <div class="container">
+            <h2>Контакти</h2>
+            <ul>
+                <li><i>Телефон:</i> <a href="tel:+123456789" style="color: blue;">+1 (234) 567-89</a></li>
+                <li><i>Електронна пошта:</i> <a href="mailto:info@example.com" style="color: green;">info@example.com</a></li>
+                <li><i>Telegram:</i> <a href="https://t.me/yourtelegram" style="color: purple;">@yourtelegram</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>© 2024 Kyiv. </p>
+        </div>
+    </footer>
 </body>
 </html>
