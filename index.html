@@ -32,16 +32,68 @@
             <h2>Наші екскурсії</h2>
             <div class="tour">
                 <img src="karpaty.jpg" alt="Екскурсія 1">
-                <h3><span>Екскурсія Карпатами</span></h3>
-                <p>Дводенний тур-елегія в Карпати, під час якого Ви переосмислите філософію життя, ознайомившись з нашим трагічним минулим у Рогатині, відпочивши різнобічно в Яремче й на Буковелі та здійснивши непросте сходження на найвищу вершину України  - гору Говерлу</p>
+                <span>
+                    <h3>Екскурсія Карпатами</h3>
+                    <p>Дводенний тур-елегія в Карпати, під час якого Ви переосмислите філософію життя.</p>
+                </span>
             </div>
             <div class="tour">
                 <img src="lviv.jpg" alt="Екскурсія 2">
-                <h3><span>Екскурсія у Львів</span></h3>
-                <p>Популярний тур по Львову на автобусі з відвіданням відомих місць Львова, розміщених за межами історичного центру міста.</p>
+                <span>
+                    <h3>Екскурсія у Львів</h3>
+                    <p>Популярний тур по Львову на автобусі з відвіданням відомих місць Львова, розміщених за межами історичного центру міста.</p>
+                </span>
+                
             </div>
             <!-- Додайте інші екскурсії тут -->
         </div>
+        <script>
+            // Використовуємо document.write для додавання тексту на сторінку
+            document.write('<p>Ми пропонуємо різноманітні маршрути та цікаві місця для відвідування. </p>');
+        </script>
+        <script>
+            // Створюємо новий елемент <p>
+            var newParagraph = document.createElement('p');
+    
+            // Встановлюємо текст для нового елементу
+            newParagraph.textContent = 'Перегляньте та насолоджуйтеся красою світу разом з нами!';
+    
+            // Додаємо новий елемент до сторінки
+            document.body.appendChild(newParagraph);
+        </script>
+        <script>
+            // Створюємо новий текстовий вузол
+            var newText = document.createTextNode('Це текст, створений за допомогою document.createTextNode.');
+    
+            // Отримуємо елемент, до якого хочемо додати текст
+            var header = document.querySelector('header');
+    
+            // Додаємо новий текстовий вузол до елементу
+            header.appendChild(newText);
+        </script>
+        <script>
+            // Створюємо новий елемент
+            var newParagraph = document.createElement('p');
+            newParagraph.textContent = 'Цей параграф доданий перед заголовком.';
+    
+            // Отримуємо заголовок
+            var header = document.querySelector('header');
+    
+            // Додаємо новий елемент перед заголовком
+            header.prepend(newParagraph);
+        </script>
+        <script>
+            // Створюємо новий елемент, який хочемо вставити
+            var newParagraph = document.createElement('p');
+            var newText = document.createTextNode('Новий параграф після вставки.');
+            newParagraph.appendChild(newText);
+    
+            // Отримуємо посилання на елемент, після якого ми хочемо вставити новий вміст
+            var existingParagraph = document.querySelector('p');
+    
+            // Використовуємо метод node.after(), щоб вставити новий вміст після елемента
+            existingParagraph.after(newParagraph);
+        </script>
         
     </section>
     <div id="about" class="float-container">
@@ -63,7 +115,60 @@
     <footer>
         <div class="container">
             <p>© 2024 Kyiv. </p>
+            <a href="#developer-info-container" id="developer-info">Розробник сторінки</a>
+            <div id="developer-info-container"></div>
+            <button id="compare-button">Порівняти рядки</button>
+            <button id="redirect-button">Google</button>
+            
+        
         </div>
     </footer>
+    <script>
+        // Приклад використання alert після кліку на елементі
+        document.querySelector('li a[href="#home"]').addEventListener('click', function() {
+            alert('Відвідайте екскурсію!');
+        });
+
+        // Приклад використання prompt при завантаженні сторінки
+        window.addEventListener('load', function() {
+            var name = prompt('Введіть своє ім\'я:');
+            if (name) {
+                alert('Привіт, ' + name + '! Ласкаво просимо до нашого сайту!');
+            }
+        });
+        // Функція для перенаправлення на Google
+        function redirectToGoogle() {
+        // Питаємо користувача про підтвердження перенаправлення
+           var result = confirm('Ви впевнені, що хочете перейти на Google?');
+        // Якщо користувач підтвердив, перенаправляємо його на Google
+           if (result) {
+              window.location.href = 'https://www.google.com';
+            }
+        }
+    
+    // Додаємо обробник події для кнопки "Google"
+    document.getElementById('redirect-button').addEventListener('click', redirectToGoogle);
+
+        
+    </script>
+    <script>
+        // Створюємо новий елемент, який буде використаний для заміни
+        var newElement = document.createElement('div');
+        newElement.textContent = 'Новий контент для сторінки "Контакти"';
+    
+        // Отримуємо елемент, який хочемо замінити
+        var oldElement = document.getElementById('contact');
+    
+        // Замінюємо старий елемент на новий
+        oldElement.replaceWith(newElement);
+    </script>
+    <script>
+        // Отримуємо елемент, який хочемо видалити
+        var elementToRemove = document.getElementById('contact');
+    
+        // Видаляємо елемент
+        elementToRemove.remove();
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
