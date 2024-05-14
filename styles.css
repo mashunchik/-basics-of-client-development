@@ -1,240 +1,208 @@
+/* styles.css */
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    width: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #2e2941;
 }
 
-/* Стилізація шапки */
 header {
-    width: 80%; /* Встановлюємо ширину блока header */
-    margin: 0 auto; /* Розміщуємо блок по центру */
     background-color: #333;
     color: #fff;
-}
-.container {
-    width: 100%;
-    margin: 0 auto;
-}
-nav {
-    position: fixed;
-
+    padding: 20px;
 }
 
-header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-}
-
-header .logo {
-    font-size: 24px;
-    color: #1d1342;
-}
-
-header nav ul {
-    list-style: none;
+nav ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
-header nav ul li {
-    margin-left: 20px;
+nav ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
-header nav ul li:first-child {
-    margin-left: 0;
-}
-
-header nav ul li a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-.hero {
-    background-image: url('mountain.jpg');
-    background-size: 100% auto;
+.banner {
+    background-image: url('pic1.jpg');
     background-size: cover;
-    background-position: center;
     text-align: center;
     padding: 100px 0;
     color: #fff;
-    height: 100vh; /* Займати 100% висоти вікна браузера */
-    margin-top: 0; /* Видалити верхній відступ */
+    height: 600px;
+}
+.banner h1 {
+    font-size: 48px; /* Змінюємо розмір шрифту */
+    font-family: Arial, sans-serif; /* Встановлюємо шрифт */
+    color: #072a10; /* Змінюємо колір тексту */
+    margin-bottom: 20px; /* Додаємо відступ знизу */
 }
 
-.hero h1 {
-    font-size: 20px; /* Збільшити розмір тексту */
-    color: #1d1342; /* Змінити колір тексту */
-    
-}
-.description {
-    text-align: center; /* Вирівнюємо текст по центру */
-    padding: 20px 100px;
-    color: #fff;
-    max-width: 100%; /* Обмежуємо ширину тексту в межах блоку header */
-    margin-top: 400px;
+.banner p {
+    font-size: 24px; /* Змінюємо розмір шрифту */
+    font-family: Arial, sans-serif; /* Встановлюємо шрифт */
+    color: #0f2c1a; /* Змінюємо колір тексту */
+    margin-bottom: 20px; /* Додаємо відступ знизу */
 }
 
-.description p {
-    font-size: 30px;
+.highlight{
+    background-color: yellow;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #71918e;
     color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #71918e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.about-us {
+    background-color: #71918e;
+    padding: 50px 0;
     text-align: center;
 }
-.main-content {
-    padding: 50px 0;
+
+.about-us .container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.tour {
-    border: 1px solid #ccc;
-    padding: 10px;
+.about-us h2 {
+    font-size: 48px;
     margin-bottom: 20px;
-    
 }
 
-/* Стилізація рядкового елементу <span> всередині туру */
-.tour {
-    text-align: left;
+.about-us p {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+.about-text {
+    flex: 1;
+    text-align: center; /* Вирівнюємо текст праворуч */
+}
+.about-image {
+    flex: 0 0 auto;
 }
 
-.tour h3 span {
-    display: inline-block;
-}
-
-.tour img {
-    width: 30%;
+.about-us .about-image img {
+    width: 500px; /* Нова максимальна ширина */
     height: auto;
-}
-
-.float-container {
-    float: left;
-    width: 50%;
-    box-sizing: border-box;
+    border-radius: 5px;
 }
 
 
-#about, #contact {
-    width: 50%; /* встановлюємо ширину блоків на 50% */
-    box-sizing: border-box; /* враховуємо внутрішні відступи та границі у розрахунку ширини */
-    padding: 20px; /* встановлюємо внутрішні відступи */
-    text-align: center; /* вирівнюємо текст по центру */
+.tour-options {
+    padding: 50px 0;
+    text-align: center;
 }
 
-.container {
-    width: 100%; /* робимо контейнер блоків 100% ширини */
-    overflow: hidden; /* фіксуємо висоту контейнера */
+.tour-card {
+    display: inline-block;
+    width: 300px;
+    margin: 0 20px;
 }
-.tour p {
-    margin-top: 10px; /* Відступ зверху */
+
+
+.tour-card img {
+    width: 300px; /* Забезпечує респонсивний розмір */
+    height: 250px; /* Фіксована висота */
+    object-fit: cover; /* Зберігає пропорції та обрізає зображення, щоб воно повністю заповнювало контейнер */
+    border-radius: 5px;
+}
+
+.follow {
+    background-color: #f8f9fa; /* Задаємо фоновий колір */
+    padding: 50px; /* Додаємо відступи */
+    text-align: center; /* Вирівнюємо текст по центру */
+    border-radius: 10px; /* Закруглюємо кути */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Додаємо тінь */
+    border: 2px solid #71918e; /* Додаємо рамку з відповідним кольором */
+}
+
+.follow h1 {
+    font-size: 24px; /* Розмір заголовка */
+    color: #333; /* Колір тексту */
+}
+
+.follow p {
+    margin-top: 10px; /* Додаємо відступ від заголовка */
+    font-size: 18px; /* Розмір тексту */
+    color: #666; /* Колір тексту */
+}
+
+.follow button {
+    background-color: #71918e; /* Колір фону кнопки */
+    color: #fff; /* Колір тексту кнопки */
+    padding: 10px 20px; /* Визначаємо відступи */
+    border: none; /* Видаляємо рамку */
+    cursor: pointer; /* Змінюємо курсор при наведенні */
+    font-size: 16px; /* Розмір тексту кнопки */
+    transition: background-color 0.3s ease; /* Додаємо плавну анімацію зміни кольору фону */
+}
+
+.follow button:hover {
+    background-color: #0056b3; /* Колір фону кнопки при наведенні */
+}
+.container { 
+    background-color: #f8f9fa; /* Задаємо фоновий колір */
+    padding: 50px; /* Додаємо відступи */
+    text-align: center; /* Вирівнюємо текст по центру */
+    border-radius: 10px; /* Закруглюємо кути */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Додаємо тінь */
+    border: 2px solid #71918e; /* Додаємо рамку з відповідним кольором */
+}
+
+.container h2 {
+    font-size: 38px;
+}
+
+.container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.container ul li {
+    font-size: 24px;
+}
+
+.container ul li i {
+    font-style: italic;
+    margin-right: 5px;
 }
 
 footer {
-    background-color: #f9f9f9;
+    background-color: #71918e;
     color: #fff;
     text-align: center;
     padding: 20px 0;
 }
 
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s; /* Плавна анімація при зміні кольору */
-}
-
-header nav ul li a:hover {
-    color: #ff9900; /* Змінюємо колір при наведенні курсора */
-}
-
-/* Додамо стилі для посилань на розділи */
-section {
-    padding: 50px 0;
-    
-}
-
-/* Стилі для розділу "Про нас" */
-#about {
-
-    background-color: #f9f9f9;
+#container1 {
+    width: 400px;
+    height: 300px;
+    border: 2px solid #ccc;
+    margin: 0 auto;
     position: relative;
-}
+  }
+  #draggable {
+    width: 100px;
+    height: 100px;
+    background-color: #00f;
+    position: absolute;
+    cursor: pointer;
+  }
 
-#about h2 {
-    text-align: center;
-}
-
-#about p {
-    text-align: center;
-}
-
-/* Стилі для розділу "Контакти" */
-#contact {
-
-    background-color: #f9f9f9;
-    position: static;
-}
-
-
-
-#contact h2 {
-    text-align: center;
-}
-
-#contact p {
-    text-align: center;
-}
-
-.logo a {
-    text-decoration: none; /* Відключення підкреслення */
-    color: rgb(0, 0, 0); /* Колір тексту */
-    font-weight: bold; /* Жирний шрифт */
-
-    /* Додаткові стилі, які можна застосувати */
-}
-.logo a:active {
-    color: green; /* Колір при натисканні на посилання */
-}
-
-a:link {
-    color: blue; /* Колір для незалікованих посилань */
-}
-
-a:visited {
-    color: purple; /* Колір для відвіданих посилань */
-}
-
-a:hover {
-    color: red; /* Колір при наведенні на посилання */
-}
-
-a:active {
-    color: green; /* Колір при натисканні на посилання */
-}
-
-.container:first-child {
-    background-color: rgb(226, 211, 211); /* Змінюємо колір фону першого контейнера */
-}
-
-/* Стилізація псевдоелементу before для секції "Про нас" */
-#about:before {
-    content: "Про нас: "; /* Додаємо текст перед вмістом секції "Про нас" */
-    font-weight: bold;
-    color: blue;
-}
-
-/* Стилізація псевдоелементу after для секції "Контакти" */
-#contact:after {
-    content: "Можете зв'язатись з нами в будь-який час "; /* Додаємо текст після вмісту секції "Контакти" */
-    font-weight: bold;
-    color: red;
-}
-
-/* Стилізація псевдоелементу after для футера */
-footer:after {
-    content: "Всі права захищені."; /* Додаємо текст після вмісту футера */
-    font-style: italic;
-    color: green;
-}

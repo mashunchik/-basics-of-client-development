@@ -1,174 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden Kyiv</title>
+    <title>Екскурсії</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <header>
-        <nav>
-            <div class="container">
-                <div class="logo"><a href="#home">Екскурсії Україною</a></div>
-                <ul>
-                    <li><a href="#home">Головна</a></li>
-                    <li><a href="#tours1">Екскурсії</a></li>
-                    <li><a href="#about">Про нас</a></li>
-                    <li><a href="#contact">Контакти</a></li>
-                </ul>
-            </div>
+        <nav id="menu">
+            <ul>
+                <li><a href="#banner" data-action="scrollToSection">Головна</a></li>
+                <li><a href="#about-us" data-action="scrollToSection">Про нас</a></li>
+                <li><a href="#tours" data-action="scrollToSection">Екскурсії</a></li>
+                <li><a href="#contact" data-action="scrollToSection">Контакти</a></li>
+            </ul>
         </nav>
-        <div class="hero" id="home">
-        
-            <h1>Досліджуйте та відкривайте таємниці України</h1>
-            <div class="description">
-                <p>Україна – це дивовижна країна, що славиться своєю чудовою і неповторною природою, надзвичайно великою кількістю пам`яток культури. Подорожуючи по найцікавішим і величним місцям України можна відчути весь унікальний національний колорит.</p>
-            </div>
-        </div>
     </header>
-    <section class="main-content" id="tours1">
-        <div class="container">
-            <h2>Наші екскурсії</h2>
-            <div class="tour">
-                <img src="karpaty.jpg" alt="Екскурсія 1">
-                <span>
-                    <h3>Екскурсія Карпатами</h3>
-                    <p>Дводенний тур-елегія в Карпати, під час якого Ви переосмислите філософію життя.</p>
-                </span>
-            </div>
-            <div class="tour">
-                <img src="lviv.jpg" alt="Екскурсія 2">
-                <span>
-                    <h3>Екскурсія у Львів</h3>
-                    <p>Популярний тур по Львову на автобусі з відвіданням відомих місць Львова, розміщених за межами історичного центру міста.</p>
-                </span>
-                
-            </div>
-            <!-- Додайте інші екскурсії тут -->
-        </div>
-        <script>
-            // Використовуємо document.write для додавання тексту на сторінку
-            document.write('<p>Ми пропонуємо різноманітні маршрути та цікаві місця для відвідування. </p>');
-        </script>
-        <script>
-            // Створюємо новий елемент <p>
-            var newParagraph = document.createElement('p');
-    
-            // Встановлюємо текст для нового елементу
-            newParagraph.textContent = 'Перегляньте та насолоджуйтеся красою світу разом з нами!';
-    
-            // Додаємо новий елемент до сторінки
-            document.body.appendChild(newParagraph);
-        </script>
-        <script>
-            // Створюємо новий текстовий вузол
-            var newText = document.createTextNode('Це текст, створений за допомогою document.createTextNode.');
-    
-            // Отримуємо елемент, до якого хочемо додати текст
-            var header = document.querySelector('header');
-    
-            // Додаємо новий текстовий вузол до елементу
-            header.appendChild(newText);
-        </script>
-        <script>
-            // Створюємо новий елемент
-            var newParagraph = document.createElement('p');
-            newParagraph.textContent = 'Цей параграф доданий перед заголовком.';
-    
-            // Отримуємо заголовок
-            var header = document.querySelector('header');
-    
-            // Додаємо новий елемент перед заголовком
-            header.prepend(newParagraph);
-        </script>
-        <script>
-            // Створюємо новий елемент, який хочемо вставити
-            var newParagraph = document.createElement('p');
-            var newText = document.createTextNode('Новий параграф після вставки.');
-            newParagraph.appendChild(newText);
-    
-            // Отримуємо посилання на елемент, після якого ми хочемо вставити новий вміст
-            var existingParagraph = document.querySelector('p');
-    
-            // Використовуємо метод node.after(), щоб вставити новий вміст після елемента
-            existingParagraph.after(newParagraph);
-        </script>
-        
+
+    <script>
+    // Функція для прокручування до відповідного розділу
+    function scrollToSection(event) {
+        event.preventDefault(); // Зупиняємо стандартну поведінку посилання
+        const targetId = event.target.getAttribute('href'); // Отримуємо id відповідного розділу
+        targetSection = document.querySelector(targetId); // Знаходимо відповідний розділ
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' }); // Прокручуємо до розділу з плавною анімацією
+        }
+    }
+    // Додаємо обробник подій для кожного посилання в меню
+    const menuLinks = document.querySelectorAll('#menu a[data-action="scrollToSection"]');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', scrollToSection); // Додаємо обробник подій для кліка
+    });
+    </script>
+
+
+    </header>
+    <section class="banner" id="banner">
+        <h1>Вивчайте відомі та невідомі місця</h1>
+        <p>Приєднуйтесь до наших екскурсій, щоб відкрити нові горизонти</p>
+        <a href="#" class="btn" id="btn" onclick="handleClick()">Дізнатися більше</a>
     </section>
-    <div id="about" class="float-container">
+    
+    <section class="about-us" id="about-us">
         <div class="container">
-            <h2>Про нас</h2>
-            <p>Щороку послугами нашої туристичної компанії користується велика кількість туристів з усіх регіонів України. Ми завжди маємо мету, щоб Ваш відпочинок був якісний, безпечний, незабутній і найкращий. Наша головна мета, щоб задоволений турист завжди на до нас повертався, а ми гарантуємо Вам нові приємні враження від нових пропозицій.</p>
+            <div class="about-text">
+                <h2>1111</h2>
+                <p>2222222222222</p>
+            </div>
+            <script>document.write('<p>Екскурсії здійснюються комфортними автобусами</p>');</script>
+            <div class="about-img">
+                <img src="bus.jpg" alt="Про нас">
+            </div>
+            
         </div>
-    </div>
+    </section>
+    <section class="tour-options" id="tours">
+        <h2>Наші екскурсії</h2>
+        <div class="tour-card">
+            <img src="odesa.jpg" alt="Екскурсія 1">
+            <h3>Одеські катакомби</h3>
+            <p>Унікальна підземна мережа, розташована під Одесою. 
+                Ця система підземних тунелів та проходів виникла під час будівництва міста в XIX-XX столітті.</p>
+            <a href="#tours" class="btn">Детальніше</a>
+        </div>
+        <div class="tour-card">
+            <img src="lviv.jpg" alt="Екскурсія 2">
+            <h3>Печера "Оптимістична"</h3>
+            <p>Печера "Оптимістична" знаходиться в Тернопільській області та вважається найдовшою гіпсовою печерою 
+                у всьому світі, тому її навіть занесли до Книги рекордів Гіннеса.</p>
+            <a href="#tours" class="btn">Детальніше</a>
+            
+        </div>
+        
+        <div class="tour-card">
+            <img src="bacota.jpg" alt="Екскурсія 3">
+            <h3>Бакота</h3>
+            <p>Затоплене село Бакота - це чарівне місце, що розташоване майже в 50 км від Кам’янця-Подільського в Хмельницькій області. Сучасною Бакотою є територія на березі Дністра.</p>
+            <a href="#tours" class="btn">Детальніше</a>
+        </div>
+        <!-- Додайте більше екскурсій, якщо потрібно -->
+    </section>
+    <section class="tour-options">
+        <div class="tour-card">
+            <img src="synevyr.jpg" alt="Екскурсія 4">
+            <h3>Озеро Синевир</h3>
+            <p>Це неперевершений природний об'єкт, розташований в Карпатах на висоті 989 м над рівнем моря.
+                Oзеро відзначається своєю кришталево-чистотою водою та захоплюючою природою навколо.</p>
+            <a href="#tours" class="btn">Детальніше</a>
+        </div>
+        <div class="tour-card">
+            <img src="hortyn.jpg" alt="Екскурсія 5">
+            <h3>Хотинська фортеця</h3>
+            <p>Це середньовічна фортеця, розташована в місті Хотин Чернівецької області. 
+                Загалом вона служила як оборонна споруда протягом більшої частини свого існування, була свідком багатьох битв.</p>
+            <a href="#tours" class="btn">Детальніше</a>
+        </div>
+        <div class="tour-card">
+            <img src="ozero.jpg" alt="Екскурсія 6">
+            <h3>Лемурійське озеро </h3>
+            <p>Лемурійське озеро відоме як "рожеве озеро" або херсонське «Мертве море» є одним із природних див Херсонської області, що розташовано біля села Григорівка. Озеро вражає своїм рожевим кольором води.</p>
+            <a href="#" onclick="redirect()" class="btn1" id="detailsBtn">Детальніше</a>
+        </div>
+        <script>
+            // Отримуємо всі елементи з класом "tour-card"
+            var tourCards = document.querySelectorAll('.tour-card');
+            
+            // Об'єкт, який буде обробляти події
+            var eventHandler = {
+                // Метод обробки подій
+                handleEvent: function(event) {
+                    // Виводимо на елемент, на якому спрацював обробник
+                    var currentCard = event.currentTarget;
+                    var message = "Забронюйте екскурсію: " + currentCard.querySelector('h3').textContent;
+                    var messageContainer = document.createElement('p');
+                    messageContainer.textContent = message;
+                    currentCard.appendChild(messageContainer);
+                    
+                    // Видаляємо об'єкт, якщо подія спрацювала
+                    currentCard.removeEventListener('click', eventHandler);
+                }
+            };
+        
+            // Додаємо обробник події до кожного елемента з класом "tour-card"
+            tourCards.forEach(function(card) {
+                card.addEventListener('click', eventHandler);
+            });
+        </script>
+    </section>
+    <section class="follow">
+        <h1>Підпишіться на нашу розсилку</h1>
+        <p>Отримуйте останні новини та спеціальні пропозиції про найкращі екскурсії!</p>
+        <button class="btn" onclick="excursionNewsletter()">11111111</button>
+        <button id="compare-button" class="btn">Порівняти рядки</button>
+    </section>
     <div id="contact" class="float-container">
         <div class="container">
             <h2>Контакти</h2>
-            <ul>
-                <li><i>Телефон:</i> <a href="tel:+123456789" style="color: blue;">+1 (234) 567-89</a></li>
-                <li><i>Електронна пошта:</i> <a href="mailto:info@example.com" style="color: green;">info@example.com</a></li>
-                <li><i>Telegram:</i> <a href="https://t.me/yourtelegram" style="color: purple;">@yourtelegram</a></li>
+            <ul id="myList">
+                <li><i>Телефон:</i> <a href="tel:+123456789" style="color: blue;">+1 (234) 567-89</a> </li>
+                <li><i>Електронна пошта:</i> <a href="mailto:info@example.com" style="color: blue;">info@example.com</a></li>
+                <li><i>Telegram:</i> <a href="https://t.me/yourtelegram" style="color: blue;">@yourtelegram</a></li>
             </ul>
+            <script>
+                // Отримуємо список елементів списку
+                var list = document.getElementById('myList');
+            
+                // Додаємо обробник подій для списку
+                list.addEventListener('click', function(event) {
+                    // Знімаємо підсвічення з усіх елементів списку
+                    list.querySelectorAll('li').forEach(function(item) {
+                        item.classList.remove('highlight');
+                    });
+                    // Підсвічуємо клікнутий елемент, якщо це елемент <li>
+                    var targetListItem = event.target.closest('li');
+                    if (targetListItem) {
+                        targetListItem.classList.add('highlight');
+                    }
+                });
+            </script>
         </div>
     </div>
+
+    
+    
+    <div id="container1">
+        <img id="draggable" src="drag.jpg" alt="Draggable Image">
+    </div>
+    
     <footer>
-        <div class="container">
-            <p>© 2024 Kyiv. </p>
-            <a href="#developer-info-container" id="developer-info">Розробник сторінки</a>
-            <div id="developer-info-container"></div>
-            <button id="compare-button">Порівняти рядки</button>
-            <button id="redirect-button">Google</button>
-            
-        
-        </div>
+        <p>&copy; 2024 Екскурсії. Усі права захищені.</p>
+        <a href="#developer-info-container" id="developer-info">Розробник сторінки</a>
+        <div id="developer-info-container"></div>
     </footer>
     <script>
-        // Приклад використання alert після кліку на елементі
-        document.querySelector('li a[href="#home"]').addEventListener('click', function() {
-            alert('Відвідайте екскурсію!');
-        });
+        function showPhoneNumber() {
+            alert("Зателефонуйте нам за номером: +380 (96) 567-89");
+        }
 
-        // Приклад використання prompt при завантаженні сторінки
-        window.addEventListener('load', function() {
-            var name = prompt('Введіть своє ім\'я:');
-            if (name) {
-                alert('Привіт, ' + name + '! Ласкаво просимо до нашого сайту!');
+        function showEmail() {
+            var email = prompt("Введіть вашу електронну пошту:", "example@example.com");
+            if (email != null) {
+                alert("Електронна пошта: " + email);
             }
+        } 
+
+        function showTelegram() {
+            var result = confirm("Бажаєте перейти на канал у Telegram?");
+            if (result == true) {
+                window.open("https://t.me/yourtelegram", "_blank");
+            }
+        }
+    </script>
+    <script>
+        const tourCard = document.querySelector('.tour-card');
+    
+        tourCard.addEventListener('mouseover', function(event) {
+            if (event.target !== this) {
+                return; // Ігноруємо, якщо подія виникла в дочірньому елементі
+            }
+            this.style.backgroundColor = 'lightblue';
         });
-        // Функція для перенаправлення на Google
-        function redirectToGoogle() {
-        // Питаємо користувача про підтвердження перенаправлення
-           var result = confirm('Ви впевнені, що хочете перейти на Google?');
-        // Якщо користувач підтвердив, перенаправляємо його на Google
-           if (result) {
-              window.location.href = 'https://www.google.com';
+    
+        tourCard.addEventListener('mouseout', function(event) {
+            if (event.relatedTarget !== this) {
+                return; // Ігноруємо, якщо курсор залишив дочірній елемент
+            }
+            this.style.backgroundColor = ''; // Скидаємо стиль
+        });
+    </script>
+    <script>
+        // Отримуємо блок з картинкою
+        var aboutTextDiv = document.querySelector('.about-img');
+    
+        // Створюємо новий елемент картинки
+        var newImage = document.createElement('img');
+        var previousImage = document.querySelector('.about-img img');
+        var width = previousImage.width;
+        var height = previousImage.height;
+        newImage.src = 'bus2.jpg'; // Шлях до нової картинки
+        newImage.alt = 'Про нас';
+        newImage.width = width;
+        newImage.height = height;
+    
+        // Функція для заміни картинки
+        function replaceImage() {
+            // Замінюємо картинку
+            aboutTextDiv.replaceWith(newImage);
+        }
+    
+        // Функція для видалення кнопки
+        function removeButton() {
+            // Видаляємо кнопку
+            var btn = document.querySelector('.banner .btn');
+            btn.remove();
+        }
+        
+        document.body.style.backgroundColor = '#71918e';
+        setTimeout(() => document.body.style.background ='', 30000);
+        // Викликаємо функції після затримки у 30 секунд
+        setTimeout(replaceImage, 30000); // 30 секунд = 30000 мілісекунд
+        setTimeout(removeButton, 30000); // 30 секунд = 30000 мілісекунд
+        // Змінити фон сторінки на червоний після 30 секунд
+
+        
+    </script>
+    <script>
+        // Отримуємо всі елементи з класом "tour-card"
+        var tourCards = document.querySelectorAll('.tour-card');
+    
+        // Функція-обробник події для наведення миші
+        function handleMouseOver(event) {
+            // Перевіряємо, чи подія спрацювала на зображенні
+            if (event.target.tagName === 'IMG') {
+                event.target.style.transform = 'scale(1.2)'; // Збільшуємо зображення
             }
         }
     
-    // Додаємо обробник події для кнопки "Google"
-    document.getElementById('redirect-button').addEventListener('click', redirectToGoogle);
+        // Функція-обробник події для відведення миші
+        function handleMouseOut(event) {
+            // Перевіряємо, чи подія спрацювала на зображенні
+            if (event.target.tagName === 'IMG') {
+                event.target.style.transform = ''; // Змінюємо розмір зображення на звичайний
+            }
+        }
+    
+        // Додаємо обробники подій до кожного зображення
+        tourCards.forEach(function(card) {
+            card.addEventListener('mouseover', handleMouseOver);
+            card.addEventListener('mouseout', handleMouseOut);
+        });
+    </script>
 
-        
-    </script>
-    <script>
-        // Створюємо новий елемент, який буде використаний для заміни
-        var newElement = document.createElement('div');
-        newElement.textContent = 'Новий контент для сторінки "Контакти"';
-    
-        // Отримуємо елемент, який хочемо замінити
-        var oldElement = document.getElementById('contact');
-    
-        // Замінюємо старий елемент на новий
-        oldElement.replaceWith(newElement);
-    </script>
-    <script>
-        // Отримуємо елемент, який хочемо видалити
-        var elementToRemove = document.getElementById('contact');
-    
-        // Видаляємо елемент
-        elementToRemove.remove();
-    </script>
     <script src="script.js"></script>
 </body>
 </html>

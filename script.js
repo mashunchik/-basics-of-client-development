@@ -1,124 +1,233 @@
+function excursionNewsletter() {
+  var validInput = false;
+
+  
+  var newsletterQuestion = confirm("Бажаєте отримувати новини про екскурсії?");
+  while (!validInput) {
+      
+      if (newsletterQuestion) {
+          var userEmail = prompt("Введіть ваш емейл для підписки на розсилку:");
+
+          if (userEmail === null) {
+              alert("Дякуємо за ваш вибір. Ви не будете отримувати новини про екскурсії.");
+              break; // Вихід з циклу, якщо користувач натиснув "Скасувати"
+          }
+
+          if (userEmail !== "") {
+              if (validateEmail(userEmail)) {
+                  alert("Дякуємо за підписку! Ваш емейл " + userEmail + " успішно доданий до розсилки новин про екскурсії.");
+                  validInput = true;
+              } else {
+                  alert("Введене значення не коректне. Будь ласка, введіть дійсний емейл.");
+              }
+          } else {
+              alert("Введіть ваш емейл для підписки на розсилку.");
+          }
+      } else {
+          alert("Дякуємо за ваш вибір. Ви не будете отримувати новини про екскурсії.");
+          validInput = true;
+      }
+  }
+}
+
+// Функція для перевірки правильності формату емейла
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
+}
 
 
-// Приклад виклику функції userDialog() при кліку на елемент з класом "logo"
-document.querySelector('.logo a').addEventListener('click', function() {
-    function userDialog() {
-        var userInput = prompt("Введіть ваше ім'я:");
-    
-        if (userInput) {
-            alert("Привіт, " + userInput + "! Ласкаво просимо до нашого сайту!");
-        } else {
-            alert("Привіт! Ласкаво просимо до нашого сайту!");
-        }
-    
-        var continueDialog = true;
-    
-        while (continueDialog) {
-            var userChoice = confirm("Хочете дізнатися більше про наші екскурсії?");
-    
-            if (userChoice) {
-                alert("Ми маємо багато цікавих екскурсій. Запрошуємо вас долучитися!");
-                continueDialog = false;continueDialog = false;
-            } else {
-                alert("Дякуємо за відвідування нашого сайту!");
-                continueDialog = false;
-            }
-        }
-    }
 
-    userDialog();
-    });
-
-// Оголошення функції для виведення інформації про розробника з параметрами
 function displayDeveloperInfo(lastName, firstName, position = "Веб-розробник") {
-    var infoContainer = document.getElementById('developer-info-container');
-    var infoParagraph = document.createElement('p');
-    infoParagraph.textContent = "Прізвище: " + lastName + ", Ім'я: " + firstName + ", Посада: " + position;
-    infoContainer.appendChild(infoParagraph);
+  var infoContainer = document.getElementById('developer-info-container');
+  var infoParagraph = document.createElement('p');
+  infoParagraph.textContent = "Прізвище: " + lastName + ", Ім'я: " + firstName + ", Посада: " + position;
+  infoContainer.appendChild(infoParagraph);
 }
 
 // Обробник події кліку на елементі з id "developer-info"
 document.querySelector('#developer-info').addEventListener('click', function() {
-    // Виклик функції з параметрами
-    displayDeveloperInfo("Тильна", "Марія");
+  // Виклик функції з параметрами
+  displayDeveloperInfo("Тильна", "Марія");
 });
 
 
 function compareStrings() {
-    var str1 = prompt("Введіть перший рядок:");
-    var str2 = prompt("Введіть другий рядок:");
+  var str1 = prompt("Введіть перший рядок:");
+  var str2 = prompt("Введіть другий рядок:");
 
-    if (str1 === null || str2 === null) {
-        alert("Ви відмінили введення.");
-        return;
-    }
+  if (str1 === null || str2 === null) {
+      alert("Ви відмінили введення.");
+      return;
+  }
 
-    var num1 = parseInt(str1);
-    var num2 = parseInt(str2);
+  var length1 = str1.length;
+  var length2 = str2.length;
 
-    if (num1 > num2) {
-        alert('Перший рядок більший: ' + str1);
-    } else if (num2 > num1) {
-        alert('Другий рядок більший: ' + str2);
-    } else {
-        alert('Рядки рівні за довжиною та символами.');
-    }
+  if (length1 > length2) {
+      alert('Перший рядок більший: ' + str1);
+  } else if (length2 > length1) {
+      alert('Другий рядок більший: ' + str2);
+  } else {
+      alert('Рядки рівні.');
+  }
 }
-
 // Отримуємо посилання на кнопку
 var compareButton = document.getElementById('compare-button');
 
 // Додаємо обробник події кліку на кнопку
 compareButton.addEventListener('click', function() {
-    // Викликаємо функцію compareStrings
-    compareStrings();
+  // Викликаємо функцію compareStrings
+  compareStrings();
 });
 
-// Зберігаємо початковий колір фону
-var originalBackgroundColor = document.body.style.background;
 
-// Змінюємо фон на новий колір 
-document.body.style.background = "white";
 
-// Встановлюємо таймер для повернення фону до початкового стану через 30 секунд
-setTimeout(function() {
-    document.body.style.background = originalBackgroundColor; // Повертаємо початковий колір фону
-}, 30000); // 30000 мілісекунд = 30 секунд
 
-// Отримуємо всі елементи з класом "tour" у розділі з ідентифікатором "tours1"
-var tourElements = document.querySelectorAll('#tours1 .tour');
+// Отримання елемента за id
+var detailsBtn = document.getElementById('detailsBtn');
 
-// Змінюємо колір тексту у всіх отриманих елементів
-tourElements.forEach(function(element) {
-    element.style.color = 'red'; // Змінюємо колір тексту на червоний
+// Перший обробник подій
+detailsBtn.addEventListener('click', function() {
+  // Виклик алерту з повідомленням
+  alert('Це другий обробник події. Натисніть "OK", щоб продовжити.');
 });
 
-// Отримуємо посилання на кнопку
-var redirectButton = document.querySelectorAll('#redirect-button')[0];
-
-// Додаємо обробник події кліку на кнопку
-redirectButton.addEventListener('click', function() {
-    // Перенаправлення на іншу сторінку (наприклад, на Google)
-    location.href = "https://www.google.com";
+// Другий обробник подій
+detailsBtn.addEventListener('click', function() {
+  // Перенаправлення на іншу сторінку після натискання "OK"
+  window.location.href = "https://espreso.tv/viznachni-mistsya-ukraini-divovizhni-lokatsii-yaki-vi-mayte-vidvidati";
 });
 
-// Отримання елементів за допомогою querySelector або getElementById
-var header = document.querySelector('header');
-var mainContent = document.querySelector('.main-content');
-var aboutSection = document.getElementById('about');
-var contactSection = document.getElementById('contact');
 
-// Використання властивостей DOM-вузла
 
-// innerHTML: змінюємо вміст внутрішнього вмісту елемента
-console.log('header.innerHTML:', header.innerHTML);
+var btnElements = document.querySelectorAll(".btn");
+btnElements.forEach(function(element) {
+  
+  element.style.borderRadius = "5px"; // Зміна радіусу кутів
+ 
+});
 
-// outerHTML: змінюємо вміст зовнішнього вмісту елемента
-console.log('mainContent.outerHTML:', mainContent.outerHTML);
 
-// nodeValue / data: не застосовується для елементів, але може бути використано для текстових вузлів
-var aboutTextNode = aboutSection.firstChild; // Отримання першого текстового вузла
-console.log('aboutTextNode.nodeValue:', aboutTextNode.nodeValue);
 
-// textContent: змінюємо текстовий вміст всіх дочірніх вузлів
-console.log('contactSection.textContent:', contactSection.textContent);
+// Створюємо новий елемент параграфу
+var paragraph = document.createElement("p");
+
+// Створюємо текстовий вузол
+var paragraphText = document.createTextNode("Зв'яжіться з нами для отримання додаткової інформації!");
+
+// Додаємо текстовий вузол в елемент параграфу
+paragraph.append(paragraphText);
+
+// Отримуємо блок контактів
+var contactContainer = document.getElementById('contact');
+
+// Вставляємо параграф вкінці блоку контактів
+contactContainer.querySelector('.container').append(paragraph);
+
+
+
+
+
+
+
+
+
+
+
+// Створення нового розділу
+var newSection = document.createElement('section');
+newSection.classList.add('additional-section'); // Додаємо клас для стилізації
+
+// Створення заголовка
+var newHeader = document.createElement('h2');
+newHeader.textContent = "222222222";
+
+// Додавання заголовка до нового розділу
+newSection.appendChild(newHeader);
+
+// Отримання посилання на футер
+var footer = document.querySelector('footer');
+
+// Вставляємо новий розділ після футера
+footer.after(newSection);
+
+// Створення параграфу
+var newParagraph = document.createElement('p');
+newParagraph.textContent = "111111111";
+
+// Отримання посилання на новий розділ
+var additionalSection = document.querySelector('.additional-section');
+
+// Додаємо параграф до нового розділу
+additionalSection.prepend(newParagraph);
+additionalSection.style.textAlign = "center";
+
+
+
+// Зміна вмісту нового параграфа за допомогою nodeValue
+newParagraph.firstChild.nodeValue = "Адреса:";
+
+// Зміна вмісту нового заголовка за допомогою data
+newHeader.firstChild.data = "Київ, вул. Шевченка, 30";
+
+
+
+var bannerHeading = document.querySelector('.banner h1');
+bannerHeading.textContent = 'Досліджуйте відомі та невідомі місця!';
+
+var aboutText = document.querySelector('.about-text');
+aboutText.innerHTML = '<h2>Про нас</h2><p>Ми - компанія, що спеціалізується на проведенні захоплюючих екскурсій як по відомим, так і по маловідомим місцям. Наша мета - допомогти вам відкрити нові області та зробити ваше подорожування незабутнім.</p><p>З нашими професійними гідами та комфортною атмосферою ви отримаєте найкращий досвід подорожей.</p>';
+
+var followButton = document.querySelector('.follow button');
+
+followButton.outerHTML = '<button class="btn" onclick="excursionNewsletter()">Підписатись</button>';
+
+
+
+
+
+const draggable = document.getElementById('draggable');
+const container1 = document.getElementById('container1');
+
+let isDragging = false;
+let offsetX, offsetY;
+
+draggable.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  offsetX = e.clientX - draggable.getBoundingClientRect().left;
+  offsetY = e.clientY - draggable.getBoundingClientRect().top;
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    const x = e.clientX - container1.getBoundingClientRect().left - offsetX;
+    const y = e.clientY - container1.getBoundingClientRect().top - offsetY;
+    const maxX = container1.offsetWidth - draggable.offsetWidth;
+    const maxY = container1.offsetHeight - draggable.offsetHeight;
+    const boundedX = Math.min(Math.max(x, 0), maxX);
+    const boundedY = Math.min(Math.max(y, 0), maxY);
+    draggable.style.left = `${boundedX}px`;
+    draggable.style.top = `${boundedY}px`;
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+
+
+
+function handleClick() {
+  alert("Подія оброблена через атрибут");
+  
+}
+
+
+// Отримуємо посилання на елемент за його id
+var btn = document.getElementById("btn");
+      
+// Призначаємо обробник події через властивість
+btn.onclick = function() {
+  alert("Подія оброблена через властивість");
+}
